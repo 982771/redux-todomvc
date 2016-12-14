@@ -1,9 +1,9 @@
-var webpack = require('webpack');
+var webpack = require('webpack'); // Requiring the webpack lib
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
+    'webpack-dev-server/client?http://localhost:8080', // Setting the URL for the hot reload
+    'webpack/hot/only-dev-server',  // Reload only the dev server
     './src/index.jsx'
   ],
   module: {
@@ -13,7 +13,7 @@ module.exports = {
       loader: 'react-hot!babel'
     }, {
       test: /\.css$/,
-      loader: 'style!css'
+      loader: 'style!css'  // We add the css loader
     }]
   },
   resolve: {
@@ -26,7 +26,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
-    hot: true
+    hot: true // Activate hot loading
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin() // Wire in the hot loading plugin
